@@ -2,7 +2,7 @@
 
 A bilingual (English/Indonesian), responsive personal portfolio website built with plain HTML, CSS, and JavaScript.
 
-🔗 **Live site:** https://LINK_VERCEL_KAMU.vercel.app
+🔗 **Live site:** 
 
 ## About
 
