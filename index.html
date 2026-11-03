@@ -1,0 +1,2338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dian Pratiwi — Information Systems graduate, IT Governance and Data Analytics portfolio."
+    />
+    <meta name="theme-color" content="#f5f3ed" />
+    <title>Dian Pratiwi — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #26372e;
+        --muted: #69766c;
+        --green: #456b53;
+        --green-dark: #304b3a;
+        --sage: #dce6d9;
+        --sage-light: #edf2e9;
+        --cream: #f7f6f0;
+        --paper: #fffefa;
+        --line: #e4e7dc;
+        --shadow: 0 18px 50px rgba(42, 63, 47, 0.09);
+        --radius: 22px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 88px;
+      }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "DM Sans", sans-serif;
+        line-height: 1.65;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
+      }
+      .container {
+        width: min(1120px, calc(100% - 48px));
+        margin: auto;
+      }
+      .nav-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(247, 246, 240, 0.88);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(228, 231, 220, 0.8);
+      }
+      nav {
+        min-height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .brand {
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        font-size: 1.15rem;
+      }
+      .brand span {
+        color: var(--green);
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .nav-links a {
+        position: relative;
+        padding: 10px 0;
+        color: var(--muted);
+        transition: color 0.22s ease;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 1px;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #78977a, #b2c7a9);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.25s ease;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--ink);
+      }
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        transform: scaleX(1);
+      }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .lang-btn,
+      .menu-btn {
+        border: 1px solid var(--line);
+        background: var(--paper);
+        color: var(--ink);
+        border-radius: 999px;
+        padding: 9px 14px;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 0.8rem;
+      }
+      .menu-btn {
+        display: none;
+        padding: 9px 12px;
+      }
+      .hero {
+        padding: 40px 0 76px;
+        overflow: hidden;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.35fr 0.8fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        color: var(--green);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .eyebrow:before {
+        content: "";
+        width: 28px;
+        height: 1px;
+        background: var(--green);
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+      h1 {
+        font:
+          600 clamp(3rem, 6vw, 5.6rem)/1.04 "Playfair Display",
+          serif;
+        letter-spacing: -0.055em;
+        margin: 22px 0;
+      }
+      h1 em {
+        color: var(--green);
+        font-weight: 500;
+      }
+      .hero-copy {
+        color: var(--muted);
+        font-size: 1.05rem;
+        max-width: 610px;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+      }
+      .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+        padding: 13px 19px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        transition: 0.2s ease;
+      }
+      .btn-primary {
+        background: var(--green);
+        color: white;
+        box-shadow: 0 8px 20px rgba(69, 107, 83, 0.18);
+      }
+      .btn-primary:hover {
+        background: var(--green-dark);
+        transform: translateY(-2px);
+      }
+      .btn-secondary {
+        border: 1px solid #cfd8cc;
+        background: rgba(255, 254, 250, 0.65);
+      }
+      .btn-secondary:hover {
+        border-color: var(--green);
+        transform: translateY(-2px);
+      }
+      .hero-card {
+        position: relative;
+        background: transparent;
+        padding: 0;
+        border-radius: 0;
+        height: auto;
+        min-height: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .hero-card::before {
+        content: "";
+        position: absolute;
+        width: min(340px, 100%);
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        border: 2px solid var(--green);
+        transform: translate(14px, 14px);
+        opacity: 0.45;
+      }
+      .hero-card::after {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: var(--sage);
+        top: -10px;
+        right: 10px;
+        z-index: 0;
+      }
+      .profile-photo-wrap {
+        position: relative;
+        z-index: 1;
+        width: min(340px, 100%);
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .profile-photo {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 65%;
+        transform: scale(1.45);
+      }
+      section {
+        padding: 30px 0 50px;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 24px;
+        margin-bottom: 34px;
+      }
+      .section-head h2 {
+        font:
+          600 clamp(2rem, 4vw, 3.2rem)/1.1 "Playfair Display",
+          serif;
+        letter-spacing: -0.04em;
+        margin: 12px 0 0;
+      }
+      .section-intro {
+        max-width: 430px;
+        color: var(--muted);
+        margin: 0;
+        font-size: 0.94rem;
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+      .panel {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px;
+      }
+      .panel p {
+        color: var(--muted);
+        margin-bottom: 0;
+      }
+      .facts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 20px;
+      }
+      .fact {
+        background: var(--sage-light);
+        padding: 15px;
+        border-radius: 15px;
+      }
+      .fact small {
+        display: block;
+        color: var(--muted);
+        font-size: 0.75rem;
+        margin-bottom: 3px;
+      }
+      .fact strong {
+        font-size: 0.92rem;
+      }
+      .fact-wide {
+        grid-column: 1 / -1;
+      }
+      .course-list {
+        display: block;
+        margin-top: 8px;
+        font-size: 0.88rem;
+        line-height: 1.8;
+        font-weight: 500;
+      }
+      .timeline {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 25px;
+        padding: 25px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .timeline:last-child {
+        border-bottom: 0;
+      }
+      .date {
+        color: var(--green);
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+      .timeline h3 {
+        margin: 0 0 5px;
+        font-size: 1.08rem;
+      }
+      .timeline .org {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+      .timeline ul {
+        color: var(--muted);
+        margin: 0;
+        padding-left: 18px;
+        font-size: 0.9rem;
+      }
+      /* Experience timeline additions */
+      .experience-timeline {
+        position: relative;
+        padding-left: 38px;
+      }
+      .experience-timeline::before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+        background: linear-gradient(to bottom, var(--green), #b7cbb4, transparent);
+      }
+      .experience-item {
+        position: relative;
+        margin-bottom: 22px;
+      }
+      .experience-dot {
+        position: absolute;
+        left: -36px;
+        top: 27px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--green);
+        border: 4px solid var(--sage-light);
+        box-shadow: 0 0 0 2px var(--green);
+      }
+      .experience-card {
+        padding: 25px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--paper);
+        box-shadow: var(--shadow);
+      }
+      .experience-card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .experience-card-top h3 { margin: 0 0 5px; }
+      .experience-badge {
+        flex: 0 0 auto;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 5px 13px;
+        color: var(--green);
+        font-size: .78rem;
+        font-weight: 700;
+      }
+      .experience-period {
+        color: var(--green);
+        font-size: .82rem;
+        font-weight: 700;
+        margin: 12px 0;
+      }
+      .experience-card ul {
+        color: var(--muted);
+        margin: 0;
+        padding-left: 19px;
+        font-size: .9rem;
+      }
+      .experience-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+      }
+      .experience-gallery img {
+        width: 150px;
+        height: 105px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        cursor: zoom-in;
+        background: var(--sage-light);
+        transition: transform .2s ease;
+      }
+      .experience-gallery img:hover { transform: scale(1.04); }
+      .image-lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: rgba(20, 28, 22, .9);
+        cursor: zoom-out;
+      }
+      .image-lightbox.open { display: flex; }
+      .image-lightbox img {
+        max-width: min(94vw, 1100px);
+        max-height: 88vh;
+        object-fit: contain;
+        border-radius: 12px;
+        box-shadow: 0 20px 70px rgba(0,0,0,.35);
+      }
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+      .project {
+        display: flex;
+        flex-direction: column;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        transition: 0.22s ease;
+      }
+      .project:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+        border-color: #91ad91;
+      }
+      .project-banner {
+        position: relative;
+        height: 170px;
+        display: flex;
+        justify-content: center;
+        background: linear-gradient(135deg, var(--sage), var(--sage-light));
+      }
+      .project-banner::before {
+        content: "";
+        width: 90px;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(69, 107, 83, 0.18), rgba(69, 107, 83, 0));
+      }
+      .project-banner::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 0 0;
+        height: 70px;
+        background: linear-gradient(to bottom, transparent, var(--paper));
+      }
+      .project-icon {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 54px;
+        line-height: 1;
+        z-index: 1;
+      }
+      .project-body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 0 26px 26px;
+      }
+      .project-cat {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--green);
+        margin-bottom: 8px;
+      }
+      .project h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        line-height: 1.3;
+        margin-bottom: 10px;
+      }
+      .project p {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-bottom: 18px;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin-top: auto; 
+        margin-bottom: 20px;
+      }
+      .tags span {
+        color: var(--green-dark);
+        background: var(--sage-light);
+        border: 1px solid var(--line);
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+      .project-links {
+        display: flex;
+        gap: 10px;
+      }
+      .gh-btn {
+        display: flex;
+        flex: 1 1 0;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 46px;
+        min-height: 46px;
+        max-height: 46px;
+        padding: 0 14px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        color: var(--green-dark);
+        font-size: 0.88rem;
+        font-weight: 700;
+        line-height: 1;
+        transition: 0.22s ease;
+      }
+      .project-body > .gh-btn {
+        flex: none;
+        width: 100%;
+      }
+      .gh-btn:hover {
+        background: var(--sage-light);
+        border-color: var(--green);
+        color: var(--green);
+      }
+      .gh-btn img,
+      .gh-btn svg {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        display: block;
+        flex-shrink: 0;
+      }
+      .committee-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 17px;
+      }
+      .committee-card {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #dce4d8;
+        border-radius: 20px;
+        background: rgba(255, 254, 250, 0.82);
+        color: var(--ink);
+        overflow: hidden;
+        transition: 0.22s ease;
+      }
+      .committee-card:hover {
+        transform: translateY(-4px);
+        border-color: #91ad91;
+        box-shadow: var(--shadow);
+      }
+      .committee-photo {
+        position: relative;
+        height: 170px;
+        display: grid;
+        place-items: center;
+        background: var(--sage-light);
+        border-bottom: 1px solid var(--line);
+      }
+      .committee-photo img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: zoom-in;
+        background: var(--sage-light);
+      }
+      /* Ikon ini tampil kalau foto belum ada / gagal dimuat */
+      .committee-icon {
+        color: var(--green);
+        font-size: 1.7rem;
+        opacity: 0.5;
+      }
+      .committee-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 18px 20px 20px;
+      }
+      .committee-body strong {
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+      .committee-org {
+        color: var(--muted);
+        font-size: 0.83rem;
+        line-height: 1.45;
+      }
+      .committee-period {
+        margin-top: 6px;
+        color: var(--green);
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+      .committee-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: auto;
+        padding-top: 12px;
+      }
+      .committee-tag {
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: var(--sage-light);
+        color: var(--green);
+        font-size: 0.72rem;
+        font-weight: 700;
+      }
+      /* Skills: 3 kotak di baris atas, 2 kotak lebih lebar di baris bawah. Kotak sebaris sama tinggi. */
+      .skills-layout {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 18px;
+      }
+      .skills-layout .skill-group { grid-column: span 2; }
+      .skills-layout .skill-group:nth-child(n + 4) { grid-column: span 3; }
+      @media (max-width: 1000px) {
+        .skills-layout { grid-template-columns: repeat(2, 1fr); }
+        .skills-layout .skill-group,
+        .skills-layout .skill-group:nth-child(n + 4) { grid-column: auto; }
+        .skills-layout .skill-group:last-child { grid-column: 1 / -1; }
+      }
+      .skills-layout .skill-group.panel { padding: 20px 22px 22px; border-radius: 18px; }
+      .skill-head {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        margin-bottom: 14px;
+      }
+      .skill-ico {
+        flex: none;
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border-radius: 10px;
+        background: var(--sage-light);
+        font-size: 1rem;
+      }
+      .skill-group h3 {
+        margin: 0;
+        font-size: 0.8rem;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .chip {
+        border: 1px solid var(--line);
+        background: var(--paper);
+        border-radius: 999px;
+        padding: 7px 12px;
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+      /* Chip tanpa titik (Hard skills / Soft skills) */
+      .chip.plain {
+        background: var(--sage-light);
+        border-color: rgba(69, 107, 83, 0.25);
+        color: var(--green-dark);
+      }
+      /* Titik tingkat kemampuan: ubah angka --lvl (1-5) di HTML */
+      .chip .dots {
+        --lvl: 3;
+        position: relative;
+        display: inline-block;
+        width: 55px;
+        height: 8px;
+        margin-left: 8px;
+        vertical-align: middle;
+      }
+      .chip .dots::before,
+      .chip .dots::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        background: radial-gradient(circle at 5.5px 4px, currentColor 3px, transparent 3.5px) 0 0 / 11px 8px repeat-x;
+      }
+      .chip .dots::before { width: 100%; color: rgba(69, 107, 83, 0.2); }
+      .chip .dots::after { width: calc(var(--lvl) * 11px); color: var(--green); }
+      /* Kotak Languages: garis (progress bar) */
+      .lang-list { display: grid; gap: 14px; }
+      .lang-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 6px;
+        font-size: 0.85rem;
+      }
+      .lang-top .lang-name { font-weight: 600; color: var(--ink); }
+      .lang-top .lang-level { color: var(--muted); font-size: 0.78rem; }
+      .lang-bar {
+        height: 6px;
+        border-radius: 999px;
+        background: rgba(69, 107, 83, 0.15);
+        overflow: hidden;
+      }
+      .lang-bar span {
+        display: block;
+        width: var(--lvl, 50%);
+        height: 100%;
+        border-radius: inherit;
+        background: var(--green);
+      }
+      .skill-note {
+        margin: 14px 0 0;
+        color: var(--muted);
+        font-size: 0.78rem;
+      }
+      .cert-slider { position: relative; }
+      .cert-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px 16px;
+        margin-bottom: 12px;
+      }
+      .cert-bar .cert-nav { margin-bottom: 0; margin-left: auto; }
+      .cert-tabs { display: flex; flex-wrap: wrap; gap: 10px; }
+      .cert-tab {
+        font: inherit;
+        font-size: 0.9rem;
+        padding: 8px 18px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: var(--paper);
+        color: var(--muted);
+        cursor: pointer;
+        transition: background .2s ease, color .2s ease, border-color .2s ease;
+      }
+      .cert-tab:hover { border-color: var(--green); color: var(--green-dark); }
+      .cert-tab[aria-pressed="true"] {
+        background: var(--green);
+        border-color: var(--green);
+        color: #fff;
+      }
+      .cert-tab:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+      .cert-item[hidden] { display: none; }
+      .cert-nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+      .cert-nav[hidden] { display: none; }
+      .cert-nav button {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        background: var(--paper);
+        color: var(--green-dark);
+        cursor: pointer;
+        transition: border-color .2s ease, opacity .2s ease;
+      }
+      .cert-nav button:hover:not(:disabled) { border-color: var(--green); }
+      .cert-nav button:focus-visible,
+      .cert-link:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+      .cert-nav button:disabled { opacity: .35; cursor: default; }
+      .cert-track {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 4px 2px 16px;
+        scrollbar-width: none;
+      }
+      .cert-track::-webkit-scrollbar { display: none; }
+      /* Mode grid: tambahkan class "is-grid" pada .cert-track */
+      .cert-track.is-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        overflow: visible;
+      }
+      .cert-item {
+        flex: 0 0 240px;
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 17px;
+        overflow: hidden;
+      }
+      .cert-thumb {
+        position: relative;
+        height: 120px;
+        background: var(--sage-light);
+        border-bottom: 1px solid var(--line);
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+      }
+      .cert-thumb img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        cursor: zoom-in;
+        background: var(--paper);
+      }
+      .cert-mark {
+        color: var(--green);
+        background: var(--sage-light);
+        border-radius: 11px;
+        padding: 9px;
+      }
+      .cert-thumb .cert-mark { background: var(--paper); font-size: 1.3rem; }
+      .cert-info {
+        flex: 1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 14px 14px 16px;
+      }
+      .cert-info strong {
+        display: block;
+        font-size: 0.92rem;
+        line-height: 1.35;
+      }
+      .cert-info small {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.8rem;
+        line-height: 1.45;
+      }
+      .cert-info .cert-issued {
+        display: block;
+        margin-top: 6px;
+        color: var(--green);
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+      .cert-link {
+        flex: none;
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        color: var(--green);
+        background: var(--sage-light);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        transition: background .2s ease, color .2s ease;
+      }
+      .cert-link:hover { background: var(--green); color: #fff; }
+      .cert-link svg { width: 17px; height: 17px; }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+      .contact-box {
+        background: var(--green-dark);
+        color: white;
+        border-radius: 30px;
+        padding: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+      }
+
+      /* HERO SOCIAL ICONS */
+      .hero-contact-cards {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 20px;
+      }
+
+      .hero-contact-card {
+        width: 52px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--paper);
+        color: var(--green-dark);
+        text-decoration: none;
+        font-size: 21px;
+        font-weight: 700;
+        transition: all 0.25s ease;
+      }
+
+      .hero-contact-card:hover {
+        transform: translateY(-5px);
+        background: var(--sage-light);
+        border-color: var(--green);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-contact-card svg {
+        width: 22px;
+        height: 22px;
+        fill: currentColor;
+      }
+
+      .contact-box h2 {
+        font:
+          600 clamp(2rem, 4vw, 3rem)/1.1 "Playfair Display",
+          serif;
+        margin: 10px 0;
+      }
+      .contact-box p {
+        color: #d5e0d5;
+        margin-bottom: 0;
+        max-width: 530px;
+      }
+      .contact-box .btn {
+        background: var(--paper);
+        color: var(--green-dark);
+        white-space: nowrap;
+      }
+      .contact-icons {
+        display: flex;
+        gap: 22px;
+        flex-wrap: wrap;
+      }
+      .contact-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        color: #d5e0d5;
+        transition: 0.22s ease;
+      }
+      .contact-icon-tile {
+        width: 60px;
+        height: 60px;
+        display: grid;
+        place-items: center;
+        border-radius: 16px;
+        background: var(--paper);
+        color: var(--green-dark);
+        transition: 0.22s ease;
+      }
+      .contact-icon-tile svg {
+        width: 26px;
+        height: 26px;
+      }
+      .contact-icon-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .contact-icon:hover {
+        color: #fff;
+      }
+      .contact-icon:hover .contact-icon-tile {
+        transform: translateY(-5px);
+        background: var(--sage);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+      }
+      footer {
+        padding: 28px 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.65s ease,
+          transform 0.65s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+      @media (max-width: 820px) {
+        .hero-grid {
+          grid-template-columns: 1fr 0.7fr;
+          gap: 25px;
+        }
+        .profile-photo-wrap {
+          width: min(300px, 100%);
+        }
+        .nav-links {
+          gap: 14px;
+        }
+        .section-head {
+          display: block;
+        }
+        .section-intro {
+          margin-top: 14px;
+        }
+        .project-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .committee-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 650px) {
+        .container {
+          width: min(100% - 34px, 540px);
+        }
+        nav {
+          min-height: 68px;
+        }
+        .menu-btn {
+          display: inline-block;
+        }
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 68px;
+          left: 0;
+          right: 0;
+          padding: 18px 24px 22px;
+          background: var(--cream);
+          border-bottom: 1px solid var(--line);
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .nav-links.open {
+          display: flex;
+        }
+        .hero {
+          padding: 62px 0 50px;
+        }
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-card {
+          max-width: 340px;
+          margin: 8px auto 0;
+          width: 100%;
+        }
+        .profile-photo-wrap {
+          width: min(270px, 100%);
+        }
+        section {
+          padding: 58px 0;
+        }
+        .about-grid,
+        .project-grid,
+        .skills-layout,
+        .committee-grid {
+          grid-template-columns: 1fr;
+        }
+        .committee-photo {
+          height: 190px;
+        }
+        .timeline {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+        .contact-box {
+          padding: 30px 24px;
+          display: block;
+        }
+        .contact-box .btn {
+          margin-top: 22px;
+        }
+        .contact-icons {
+          margin-top: 26px;
+          justify-content: center;
+        }
+        .facts {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 650px) {
+        .experience-timeline { padding-left: 30px; }
+        .experience-dot { left: -28px; }
+        .experience-card { padding: 18px; }
+        .experience-card-top { flex-direction: column; }
+        .experience-gallery img { width: 112px; height: 88px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *:before,
+        *:after {
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      /* FIX SPACING KHUSUS PROJECTS */
+      #projects .section-head {
+        margin-bottom: 20px !important;
+        padding-bottom: 10px;
+      }
+      #projects .project-grid {
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav-wrap">
+      <nav class="container">
+        <a class="brand" href="#home">Dian's Portofolio</a>
+        <div class="nav-links" id="navLinks">
+          <a href="#about" data-en="About" data-id="Tentang">About</a>
+          <a href="#experience" data-en="Experience" data-id="Pengalaman">Experience</a>
+          <a href="#projects" data-en="Projects" data-id="Proyek">Projects</a>
+          <a href="#certifications" data-en="Certifications" data-id="Sertifikasi">Certifications</a>
+          <a href="#skills" data-en="Skills" data-id="Keahlian">Skills</a>
+          <a href="#committees" data-en="Committees" data-id="Kepanitiaan">Committees</a>
+          <a href="#contact" data-en="Contact" data-id="Kontak">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <button class="lang-btn" id="langToggle" aria-label="Switch language">
+            ID / EN
+          </button>
+          <button class="menu-btn" id="menuToggle" aria-label="Open menu">
+            ☰
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <main>
+      <header class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="reveal">
+            <div
+              class="eyebrow"
+              data-en="Information Systems Graduate"
+              data-id="Lulusan Sistem Informasi"
+            >
+              Information Systems Graduate
+            </div>
+            <h1
+              data-en-html="Hello, I'm<br><em>Dian Pratiwi</em>"
+              data-id-html="Halo, saya<br><em>Dian Pratiwi</em>"
+            >
+              Hello, I'm<br /><em>Dian Pratiwi.</em>
+            </h1>
+            <p
+              class="hero-copy"
+              data-en="I am an Information Systems graduate from Universitas Airlangga with an interest in IT Governance, Data Analytics, and Business Intelligence. I enjoy turning information into structured insights and practical solutions."
+              data-id="Saya lulusan Sistem Informasi Universitas Airlangga dengan ketertarikan pada IT Governance, Data Analytics, and Business Intelligence. Saya senang mengolah informasi menjadi insight yang terstruktur dan solusi yang praktis."
+            >
+              I am an Information Systems graduate from Universitas Airlangga
+              with an interest in IT Governance, Data Analytics, and Business
+              Intelligence. I enjoy turning information into structured insights
+              and practical solutions.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="btn btn-primary"
+                href="#projects"
+                data-en="Explore my work ↗"
+                data-id="Lihat proyek saya ↗"
+                >Explore my work ↗</a
+              >
+              <a
+                class="btn btn-secondary"
+                href="#contact"
+                data-en="Get in touch"
+                data-id="Hubungi saya"
+                >Get in touch</a
+              >
+            </div>
+
+            <!-- SOCIAL MEDIA ICONS -->
+            <div class="hero-contact-cards">
+              <a
+                class="hero-contact-card"
+                href="mailto:dianpratiwi14044@gmail.com"
+                aria-label="Email"
+                title="Email"
+              >
+                ✉
+              </a>
+              <a
+                class="hero-contact-card"
+                href="https://www.linkedin.com/in/ddpratiwiii/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+              >
+                in
+              </a>
+              <a
+                class="hero-contact-card"
+                href="https://github.com/dianpratiwi14"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                title="GitHub"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.05c-3.1.67-3.75-1.32-3.75-1.32-.5-1.29-1.23-1.63-1.23-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.47-.28-5.07-1.24-5.07-5.5 0-1.21.43-2.2 1.15-2.98-.12-.28-.5-1.41.11-2.94 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.66.11 2.94.72.78 1.15 1.77 1.15 2.98 0 4.27-2.6 5.22-5.08 5.49.4.35.75 1.02.75 2.06V22c0 .29.2.63.76.53A11.1 11.1 0 0 0 12 .9z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- PROFILE PHOTO -->
+          <div class="hero-card reveal" aria-label="Dian Pratiwi profile photo">
+            <div class="profile-photo-wrap">
+              <img
+                src="images/profile.jpg"
+                alt="Dian Pratiwi"
+                class="profile-photo"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section id="about">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div
+                class="eyebrow"
+                data-en="A little introduction"
+                data-id="Perkenalan singkat"
+              >
+                A little introduction
+              </div>
+              <h2 data-en="Who I Am" data-id="Tentang saya">Who I Am</h2>
+            </div>
+          </div>
+          <div class="about-grid">
+            <article class="panel reveal">
+              <p
+                data-en="An Information Systems graduate from Universitas Airlangga with a strong interest in IT Governance, Data Analytics, Machine Learning, Business Intelligence, and Data Science. Interested in leveraging technology and data to support business processes and informed decision making."
+                data-id="Lulusan Sistem Informasi Universitas Airlangga dengan ketertarikan pada Tata Kelola TI, Analisis Data, Machine Learning, Business Intelligence, dan Data Science. Memiliki minat dalam pemanfaatan teknologi dan data untuk mendukung proses bisnis serta pengambilan keputusan."
+              >
+                An Information Systems graduate from Universitas Airlangga with
+                a strong interest in IT Governance, Data Analytics, Machine
+                Learning, Business Intelligence, and Data Science. Interested in
+                leveraging technology and data to support business processes and
+                informed decision making.
+              </p>
+
+              <p
+                style="margin-top: 16px"
+                data-en="Gained professional experience as an IT Governance Analyst Intern, contributing to SPBE metadata evaluation, documentation, business process analysis, and reporting using Excel. Also developed data-driven solutions, machine learning models, and interactive dashboards through academic projects."
+                data-id="Memiliki pengalaman profesional sebagai IT Governance Analyst Intern, dengan kontribusi dalam evaluasi metadata SPBE, dokumentasi, analisis proses bisnis, dan penyusunan laporan menggunakan Excel. Selain itu, mengembangkan solusi berbasis data, model machine learning, dan dashboard interaktif melalui proyek akademik."
+              >
+                Gained professional experience as an IT Governance Analyst
+                Intern, contributing to SPBE metadata evaluation, documentation,
+                business process analysis, and reporting using Excel. Also
+                developed data-driven solutions, machine learning models, and
+                interactive dashboards through academic projects.
+              </p>
+
+              <p
+                style="margin-top: 16px"
+                data-en="Familiar with Python, SQL (basic), Excel, Tableau, and R, along with data analysis and machine learning libraries such as Pandas, NumPy, and Scikit-learn. Also experienced in data visualization, model evaluation, and business process documentation, with a structured, analytical, and adaptable approach to problem-solving."
+                data-id="Memiliki pemahaman dalam penggunaan Python, SQL (dasar), Excel, Tableau, dan R, serta library analisis data dan machine learning seperti Pandas, NumPy, dan Scikit-learn. Juga memiliki pengalaman dalam visualisasi data, evaluasi model, dan dokumentasi proses bisnis, dengan pendekatan pemecahan masalah yang terstruktur, analitis, dan adaptif."
+              >
+                Familiar with Python, SQL (basic), Excel, Tableau, and R, along
+                with data analysis and machine learning libraries such as
+                Pandas, NumPy, and Scikit-learn. Also experienced in data
+                visualization, model evaluation, and business process
+                documentation, with a structured, analytical, and adaptable
+                approach to problem-solving.
+              </p>
+            </article>
+            <article class="panel reveal">
+              <div class="eyebrow" data-en="Education" data-id="Pendidikan">
+                Education
+              </div>
+              <h3 style="margin: 13px 0 5px">Universitas Airlangga</h3>
+              <p
+                data-en="Bachelor of Information Systems · 2022-2026"
+                data-id="Sarjana Sistem Informasi · 2022-2026"
+              >
+                Bachelor of Information Systems · 2022-2026
+              </p>
+           <div class="facts">
+
+  <!-- GPA -->
+  <div class="fact">
+    <small data-en="GPA" data-id="IPK">GPA</small>
+    <strong>3.48 / 4.00</strong>
+  </div>
+
+  <!-- LOCATION -->
+  <div class="fact">
+    <small data-en="Location" data-id="Lokasi">Location</small>
+    <strong>Jakarta</strong>
+  </div>
+
+  <!-- RELEVANT COURSES -->
+  <div class="fact fact-wide">
+    <small
+      data-en="Relevant Courses"
+      data-id="Mata Kuliah Relevan"
+    >Relevant Courses</small>
+
+    <strong class="course-list">
+      Descriptive Statistics · Inferential Statistics ·
+      Database · Machine Learning · Data Mining ·
+      Data Analysis &amp; Visualization · Knowledge-Based Systems
+    </strong>
+  </div>
+
+</div>   
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+<section id="experience" style="background: var(--sage-light)">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="eyebrow" data-en="Where I've contributed" data-id="Pengalaman berkontribusi">Where I've contributed</div>
+              <h2 data-en="Experience" data-id="Pengalaman">Experience</h2>
+            </div>
+          </div>
+
+          <div class="experience-timeline">
+            <!-- INTERNSHIP -->
+            <article class="experience-item reveal">
+              <span class="experience-dot"></span>
+              <div class="experience-card">
+                <div class="experience-card-top">
+                  <div>
+                    <h3 data-en="IT Governance Analyst Intern" data-id="Magang Analis Tata Kelola TI">IT Governance Analyst Intern</h3>
+                    <div class="org">PT Tatacipta Teknologi Indonesia (TATI)</div>
+                  </div>
+                  <span class="experience-badge" data-en="Internship" data-id="Magang">Internship</span>
+                </div>
+                <div class="experience-period">FEB 2025 — JUN 2025</div>
+                <ul data-en-html="<li>Analyzed SPBE (Electronic-Based Government System) metadata across 4 government agencies using Excel, focusing on Business Process Architecture and SPBE Service domains to support the development of digital government architecture</li><li>Participated in client Focus Group Discussions (FGDs) to gather business requirements, validate findings, and communicate analytical results to stakeholders</li><li>Developed business process architecture and SOP documentation to support clients' digital transformation and service governance initiatives</li><li>Contributed to the evaluation of Government Digital Service Management maturity in accordance with Ministerial Regulation No. 8 of 2026, as an indicator of Digital Government Performance Evaluation</li>"
+                    data-id-html="<li>Menganalisis metadata Sistem Pemerintahan Berbasis Elektronik (SPBE) pada 4 instansi pemerintah menggunakan Excel,dengan fokus pada domain arsitektur Proses Bisnis dan Layanan SPBE untuk mendukung pengembangan arsitektur pemerintahan digital</li><li>Terlibat dalam FGD bersama klien untuk mengumpulkan kebutuhan bisnis, memvalidasi temuan, dan menyampaikan hasil analisis kepada pemangku kepentingan</li><li>Menyusun dokumen arsitektur proses bisnis dan SOP sebagai acuan klien dalam mendukung transformasi digital dan tata kelola layanan</li><li>Berkontribusi pada evaluasi kematangan Manajemen Layanan Digital Pemerintah sesuai Permen PANRB No. 8 Tahun 2026, sebagai indikator Evaluasi Kinerja Pemerintah Digital (Pemdi)</li>">
+                  <li>Analyzed SPBE (Electronic-Based Government System) metadata across 4 government agencies using Excel, focusing on Business Process Architecture and SPBE Service domains to support the development of digital government architecture</li>
+                  <li>Participated in client Focus Group Discussions (FGDs) to gather business requirements, validate findings, and communicate analytical results to stakeholders</li>
+                  <li>Developed business process architecture and SOP documentation to support clients' digital transformation and service governance initiatives</li>
+                  <li>Contributed to the evaluation of Government Digital Service Management maturity in accordance with Ministerial Regulation No. 8 of 2026, as an indicator of Digital Government Performance Evaluation</li>
+                </ul>
+                <div class="experience-gallery">
+                  <img src="images/experience/tati-certificate.jpg" alt="TATI internship certificate" class="zoomable-image" />
+                  <img src="images/experience/tati-documentation.jpg" alt="TATI internship documentation" class="zoomable-image" />
+                </div>
+              </div>
+            </article>
+
+            <!-- ORGANIZATION: BEM FST -->
+            <article class="experience-item reveal">
+              <span class="experience-dot"></span>
+              <div class="experience-card">
+                <div class="experience-card-top">
+                  <div>
+                    <h3 data-en="Staff, Media and Information Department - Publication Division" data-id="Staf Departemen Media dan Informasi - Divisi Publikasi">Staff, Media and Information Department - Publication Division</h3>
+                    <div class="org">BEM Fakultas Sains dan Teknologi Universitas Airlangga</div>
+                  </div>
+                  <span class="experience-badge" data-en="Organization" data-id="Organisasi">Organization</span>
+                </div>
+                <div class="experience-period">MAR — DEC 2024</div>
+                <ul data-en-html="<li>Managed the development of the organization's Company Profile, coordinating content across departments for official internal and external promotional materials</li><li>Conducted real-time event coverage through Instagram Stories and Reels to support organizational publicity</li><li>Published social media content as part of the Publication Division, contributing to 45+ pieces of content throughout the term</li>"
+                    data-id-html="<li>Bertanggung jawab dalam proyek penyusunan Company Profile organisasi, mengoordinasikan konten lintas departemen sebagai materi promosi resmi internal dan eksternal.</li><li>Melakukan live report kegiatan organisasi di Instagram melalui fitur Stories dan Reels untuk publikasi konten secara realtime</li><li>Mempublikasikan konten media sosial sebagai bagian dari Divisi Publikasi yang menghasilkan 45+ konten sepanjang kepengurusan</li>">
+                  <li>Managed the development of the organization's Company Profile, coordinating content across departments for official internal and external promotional materials</li>
+                  <li>Conducted real-time event coverage through Instagram Stories and Reels to support organizational publicity</li>
+                  <li>Published social media content as part of the Publication Division, contributing to 45+ pieces of content throughout the term</li>
+                </ul>
+                <div class="experience-gallery">
+                  <img src="images/experience/bem-fst-publication.jpg" alt="BEM FST publication documentation" class="zoomable-image" />
+                </div>
+              </div>
+            </article>
+
+            <!-- ORGANIZATION: HIMSI -->
+            <article class="experience-item reveal">
+              <span class="experience-dot"></span>
+              <div class="experience-card">
+                <div class="experience-card-top">
+                  <div>
+                    <h3 data-en="Expert Staff, Media and Branding Department - Graphic Design Division" data-id="Staf Ahli Departemen Media dan Branding - Divisi Desain Grafis">Expert Staff, Media and Branding Department - Graphic Design Division</h3>
+                    <div class="org">Himpunan Mahasiswa Sistem Informasi (HIMSI) Universitas Airlangga</div>
+                  </div>
+                  <span class="experience-badge" data-en="Organization" data-id="Organisasi">Organization</span>
+                </div>
+                <div class="experience-period">MAR — DEC 2024</div>
+                <ul data-en-html="<li>Designed visual materials, including posters, banners, and merchandise, using Figma and Canva to support organizational publicity and branding</li><li>Produced social media visual content using creative design approaches to increase engagement and organizational visibility on Instagram</li><li>Created bulletin boards as an information medium for communicating organizational programs to students</li>"
+                    data-id-html="<li>Merancang desain visual (poster, banner, merchandise) menggunakan Figma dan Canva untuk mendukung publikasi dan branding program kerja HIMSI</li><li>Memproduksi konten visual media sosial dengan pendekatan desain kreatif, mendukung peningkatan engagement dan visibilitas organisasi di Instagram</li><li>Membuat majalah dinding sebagai media publikasi informasi program kerja kepada mahasiswa</li>">
+                  <li>Designed visual materials, including posters, banners, and merchandise, using Figma and Canva to support organizational publicity and branding</li>
+                  <li>Produced social media visual content using creative design approaches to increase engagement and organizational visibility on Instagram</li>
+                  <li>Created bulletin boards as an information medium for communicating organizational programs to students</li>
+                </ul>
+                <div class="experience-gallery">
+                  <img src="images/experience/himsi-publication.jpg" alt="HIMSI design documentation" class="zoomable-image" />
+                </div>
+              </div>
+            </article>
+
+            <!-- ORGANIZATION: JIMM -->
+            <article class="experience-item reveal">
+              <span class="experience-dot"></span>
+              <div class="experience-card">
+                <div class="experience-card-top">
+                  <div>
+                    <h3 data-en="Secretary, Network and Media Department " data-id="Sekretaris Departemen Jaringan dan Media">Secretary, Network and Media Department</h3>
+                    <div class="org">Jamaah Intelektual Mahasiswa Muslim (JIMM) Fakultas Sains dan Teknologi Universitas Airlangga </div>
+                  </div>
+                  <span class="experience-badge" data-en="Organization" data-id="Organisasi">Organization</span>
+                </div>
+                <div class="experience-period">MAR — DEC 2024</div>
+                <ul data-en-html="<li>Managed departmental administration and documentation using Google Workspace, ensuring programs were organized and completed on schedule</li><li>Developed social media content strategies that increased audience engagement by 70%</li><li>Initiated a collaboration with an Islamic student organization at Universitas Brawijaya, resulting in a joint program attended by 75 students</li>"
+                    data-id-html="<li>Mengelola administrasi dan dokumentasi kegiatan departemen menggunakan Google Workspace, memastikan program kerja terlaksana tepat waktu</li><li>Menyusun strategi konten media sosial yang berhasil meningkatkan interaksi audiens hingga 70%</li><li>Menginisiasi kerja sama dengan lembaga dakwah Islam Universitas Brawijaya, menghadirkan program dengan 75 mahasiswa peserta</li>">
+                  <li>Managed departmental administration and documentation using Google Workspace, ensuring programs were organized and completed on schedule</li>
+                  <li>Developed social media content strategies that increased audience engagement by 70%</li>
+                  <li>Initiated a collaboration with an Islamic student organization at Universitas Brawijaya, resulting in a joint program attended by 75 students</li>
+                </ul>
+                <div class="experience-gallery">
+                  <img src="images/experience/jimm-publication.jpg" alt="JIMM media documentation" class="zoomable-image" />
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow" data-en="Selected works" data-id="Karya pilihan">Selected works</div>
+        <h2 data-en="Projects" data-id="Proyek">Projects</h2>
+      </div>
+    </div>
+
+    <div class="project-grid">
+
+      <article class="project reveal">
+        <div class="project-banner"><div class="project-icon">💬</div></div>
+        <div class="project-body">
+          <div class="project-cat" data-en="Thesis" data-id="Skripsi">Thesis</div>
+          <h3
+            data-en="Sarcasm Analysis and Detection of Public Opinions on the Free Nutritious Meals (MBG) Program on Social Media X Using The IndoBERT Model"
+            data-id="Analisis dan Deteksi Sarkasme pada Opini Publik terhadap Program Makan Bergizi Gratis (MBG) di Media Sosial X Menggunakan Model IndoBERT"
+          >Sarcasm Analysis and Detection of Public Opinions on the Free Nutritious Meals (MBG) Program on Social Media X Using The IndoBERT Model</h3>
+          <p
+            data-en="Undergraduate thesis on sarcasm detection in Indonesian tweets about the Free Nutritious Meal Program (MBG). Compared IndoBERT against an SVM baseline and evaluated how a data-driven sarcasm lexicon affects model performance."
+            data-id="Tugas akhir tentang deteksi sarkasme pada tweet berbahasa Indonesia terkait Program Makan Bergizi Gratis (MBG). Membandingkan IndoBERT dengan baseline SVM serta menguji pengaruh leksikon sarkasme berbasis data terhadap performa model."
+          >Undergraduate thesis on sarcasm detection in Indonesian tweets about the Free Nutritious Meal Program (MBG). Compared IndoBERT against an SVM baseline and evaluated how a data-driven sarcasm lexicon affects model performance.</p>
+          <div class="tags">
+            <span>Python</span><span>NLP</span><span>IndoBERT</span><span>SVM</span><span>DeepLearning</span>
+          </div>
+<div class="project-links">
+            <a class="gh-btn" href="https://github.com/dianpratiwi14/SarcasmDetection-MBG-IndoBERT" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+              <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              <span>Code</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-banner"><div class="project-icon">📊</div></div>
+        <div class="project-body">
+          <div class="project-cat" data-en="Data Visualization" data-id="Visualisasi Data">Data Visualization</div>
+          <h3
+            data-en="Customer Shopping Analysis and Data Visualization using Tableau "
+            data-id="Customer Shopping Analysis and Data Visualization menggunakan Tableau"
+          >Customer Shopping Analysis and Data Visualization using Tableau </h3>
+          <p
+            data-en="Analyzed a 3,900-record customer shopping dataset and developed visual insights to explore purchasing patterns and customer behavior."
+            data-id="Menganalisis dataset belanja pelanggan berisi 3.900 catatan dan menyusun visualisasi untuk mengeksplorasi pola pembelian serta perilaku pelanggan."
+          >Analyzed a 3,900-record customer shopping dataset and developed visual insights to explore purchasing patterns and customer behavior.</p>
+          <div class="tags">
+            <span>Tableau</span><span>Data Analysis</span><span>Dashboard</span>
+          </div>
+          <div class="project-links">
+          <a class="gh-btn" href="https://public.tableau.com/app/profile/mutia.bahalwan5629/viz/ShoppingDataAnalysis/DashboardFinal" target="_blank" rel="noopener noreferrer" aria-label="View Tableau dashboard">
+            <img src="images/tableau.png" alt="" width="24" height="24">
+            <span>Dashboard</span>
+          </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-banner"><div class="project-icon">🫀</div></div>
+        <div class="project-body">
+          <div class="project-cat" data-en="Informatica Biomedic" data-id="Informatika Biomedik">Informatica Biomedic</div>
+          <h3
+            data-en="Heart Disease Diagnosis using Machine Learning"
+            data-id="Heart Disease Diagnosis menggunakan Machine Learning"
+          >Heart Disease Diagnosis using Machine Learning</h3>
+          <p
+            data-en="Developed machine learning models to diagnose heart disease from 918 patient records, comparing five classifiers and the effect of outlier removal, with the best AUC of about 0.93."
+            data-id="Mengembangkan model machine learning untuk mendiagnosis penyakit jantung dari 918 data pasien, dengan membandingkan lima algoritma klasifikasi dan pengaruh penghapusan outlier, serta AUC terbaik sekitar 0,93."
+          >Developed machine learning models to diagnose heart disease from 918 patient records, comparing five classifiers and the effect of outlier removal, with the best AUC of about 0.93.</p>
+          <div class="tags">
+            <span>Machine Learning</span><span>Logistic Regression</span><span>Naive Bayes</span><span>Bagging</span><span>AdaBoost</span><span>XGBoost</span>
+          </div>
+          <div class="project-links">
+          <a class="gh-btn" href="https://github.com/dianpratiwi14/Heart-Disease-Diagnosis-ML" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+            <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <span>Code</span>
+          </a>
+          </div>
+        </div>
+      </article>
+      
+      <article class="project reveal">
+        <div class="project-banner"><div class="project-icon">🏨</div></div>
+        <div class="project-body">
+          <div class="project-cat" data-en="Machine Learning" data-id="Pembelajaran Mesin">Machine Learning </div>
+          <h3
+            data-en="Hotel Review Sentiment Analysis Using Support Vector Machine (SVM)"
+            data-id="Analisis Sentimen Ulasan Hotel Menggunakan Support Vector Machine (SVM)"
+          >Hotel Review Sentiment Analysis Using Support Vector Machine (SVM)</h3>
+          <p
+            data-en="Developed a hotel review sentiment classification model using Support Vector Machine (SVM), with text preprocessing and TF-IDF feature extraction."
+            data-id="Mengembangkan model klasifikasi sentimen ulasan hotel menggunakan Support Vector Machine (SVM), dengan preprocessing teks dan ekstraksi fitur TF-IDF."
+          >Developed a hotel review sentiment classification model using Support Vector Machine (SVM), with text preprocessing and TF-IDF feature extraction.</p>
+          <div class="tags">
+            <span>Python</span><span>Machine Learning</span><span>Support Vector Machine</span>
+          </div>
+          <div class="project-links">
+          <a class="gh-btn" href="https://github.com/dianpratiwi14/HotelReview-Sentiment-SVM" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+            <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <span>Code</span>
+          </a>
+          </div>
+        </div>
+      </article>
+      
+      <article class="project reveal">
+        <div class="project-banner"><div class="project-icon">🏪</div></div>
+        <div class="project-body">
+          <div class="project-cat" data-en="Enterprise Architecture Planning" data-id="Perencanaan Arsitektur Perusahaan">Enterprise Architecture Planning</div>
+          <h3
+            data-en="ERP System Design for a Traditional Grocery Retailer: Case Study of Toko Hj. Muslicha"
+            data-id="Perancangan Sistem ERP untuk Traditional Grocery Retailer: Studi Kasus Toko Hj. Muslicha"
+          >ERP System Design for a Traditional Grocery Retailer: Case Study of Toko Hj. Muslicha</h3>
+          <p
+            data-en="Designed business processes and supporting data and technology architectures for ERP implementation in a traditional grocery retailer."
+            data-id="Merancang proses bisnis serta arsitektur data dan teknologi pendukung untuk implementasi ERP pada toko kelontong tradisional."
+          >Designed business processes and supporting data and technology architectures for ERP implementation in a traditional grocery retailer.</p>
+          <div class="tags">
+            <span>BPMN</span><span>CDM</span><span>PDM</span><span>ODOO</span>
+          </div>
+          <div class="project-links">
+          <a class="gh-btn" href="https://drive.google.com/file/d/1ECwbHGzRJ7Xw9k3xpPfEalAeVxWeRxw5/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Documentation">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/></svg>
+            <span>Documentation</span>
+          </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-banner"><div class="project-icon">🥗</div></div>
+        <div class="project-body">
+          <div class="project-cat" data-en="Interaction Design" data-id="Desain Interaksi">Interaction Design</div>
+          <h3
+            data-en="NutriMate: UI Design for Health and Nutrition Tracking Website"
+            data-id="NutriMate: Desain Antarmuka Website Pelacakan Kesehatan dan Nutrisi"
+          >NutriMate: UI Design for Health and Nutrition Tracking Website </h3>
+          <p
+            data-en="Designed the interface for NutriMate, a website for tracking health and daily nutrition intake. Covers user flow and screen flow diagrams, page layout design, and key features such as food logging and nutrition tracking."
+            data-id="Merancang antarmuka website NutriMate, platform untuk memantau kesehatan dan asupan nutrisi harian. Mencakup pembuatan user flow dan screen flow, desain tampilan halaman, serta fitur utama seperti pencatatan makanan dan pelacakan nutrisi."
+          >Designed the interface for NutriMate, a website for tracking health and daily nutrition intake. Covers user flow and screen flow diagrams, page layout design, and key features such as food logging and nutrition tracking.</p>
+          <div class="tags">
+            <span>Figma</span><span>Interaction Design</span>
+          </div>
+          <div class="project-links">
+          <a class="gh-btn" href="https://github.com/sisilialeonita1384/Nutrimate" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+            <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          </a>
+          </div>
+        </div>
+      </article>
+      
+      <article class="project reveal">
+        <div class="project-banner"><div class="project-icon">🏃</div></div>
+        <div class="project-body">
+          <div class="project-cat" data-en="Web Programming" data-id="Pemrograman Web">Web Programming</div>
+          <h3
+            data-en="PACEPAL: Running Tracker and Community Website"
+            data-id="PACEPAL: Website Pelacakan Lari dan Komunitas"
+          >PACEPAL: Running Tracker and Community Website</h3>
+          <p
+            data-en="Developed a responsive running community website with product and article management, user registration, and purchase features using HTML and CSS."
+            data-id="Mengembangkan website komunitas lari yang responsif dengan fitur pengelolaan produk dan artikel, registrasi pengguna, serta pembelian menggunakan HTML dan CSS."
+          >Developed a responsive running community website with product and article management, user registration, and purchase features using HTML and CSS.</p>
+          <div class="tags">
+            <span>HTML</span><span>CSS</span><span>CRUD Operations</span>
+          </div>
+          <div class="project-links">
+          <a class="gh-btn" href="https://github.com/dianpratiwi14/PacePal" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+            <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="certifications" style="background: var(--sage-light)">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div
+                class="eyebrow"
+                data-en="Continuous learning"
+                data-id="Belajar berkelanjutan"
+              >
+                Continuous learning
+              </div>
+              <h2 data-en="Certifications" data-id="Sertifikasi">
+                Certifications
+              </h2>
+            </div>
+          </div>
+          <div class="cert-slider reveal">
+            <div class="cert-bar">
+              <!-- TAB FILTER: nilai data-filter harus sama dengan data-cat pada kartu di bawah -->
+              <div class="cert-tabs" id="certTabs">
+                <button type="button" class="cert-tab" data-filter="all" aria-pressed="true" data-en="All" data-id="Semua">All</button>
+                <button type="button" class="cert-tab" data-filter="Dicoding" aria-pressed="false">Dicoding</button>
+                <button type="button" class="cert-tab" data-filter="LinkedIn" aria-pressed="false">LinkedIn</button>
+                <button type="button" class="cert-tab" data-filter="Others" aria-pressed="false">Others</button>
+              </div>
+              <div class="cert-nav" id="certNav">
+                <button type="button" id="certPrev" aria-label="Previous certificates">←</button>
+                <button type="button" id="certNext" aria-label="Next certificates">→</button>
+              </div>
+            </div>
+            <!-- Untuk tampilan grid: ganti class="cert-track" menjadi class="cert-track is-grid".
+                 Tambah sertifikat: salin satu blok <article class="cert-item" data-cat="...">.
+                 data-cat menentukan sertifikat masuk tab yang mana (Dicoding / LinkedIn / Others).
+                 Mau menambah tab baru? Salin satu <button class="cert-tab"> di atas, lalu samakan data-filter-nya dengan data-cat kartu.
+                 Mau menggabungkan dua tab? Samakan data-cat kartunya (atau hapus tab yang tidak dipakai).
+                 Link sertifikat: isi href pada tombol ikon di kanan bawah kartu. -->
+            <div class="cert-track" id="certTrack">
+              <article class="cert-item" data-cat="Others">
+                <div class="cert-thumb">
+                  <span class="cert-mark">✦</span>
+                  <img src="images/certs/AI Career Readiness.png" alt="AI Career Readiness certificate" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+                </div>
+                <div class="cert-info">
+                  <div>
+                    <strong>AI Career Readiness</strong>
+                    <small>ASEAN Ahead</small>
+                    <span class="cert-issued">Issued Sep 2026</span>
+                  </div>
+                  <a class="cert-link" href="https://drive.google.com/file/d/1rw9AgCwdoGCWCyFrLqk1tvmrElHhGifb/view?usp=sharing" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+                    <span class="sr-only" data-en="Open certificate" data-id="Buka sertifikat">Open certificate</span>
+                  </a>
+                </div>
+              </article>
+              <article class="cert-item" data-cat="Others">
+                <div class="cert-thumb">
+                  <span class="cert-mark">✦</span>
+                  <img src="images/certs/data-analis(microskill).jpe" alt="Data Analisis (Micro Skill) certificate" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+                </div>
+                <div class="cert-info">
+                  <div>
+                    <strong>Data Analisis (Micro Skill)</strong>
+                    <small>Digital Talent Scholarship · ID: 2299818850-22339</small>
+                    <span class="cert-issued">Issued Mar 2026</span>
+                  </div>
+                  <a class="cert-link" href="https://digitalent.kominfo.go.id/cek-sertifikat" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+                    <span class="sr-only" data-en="Open certificate" data-id="Buka sertifikat">Open certificate</span>
+                  </a>
+                </div>
+              </article>
+              <article class="cert-item" data-cat="Others">
+                <div class="cert-thumb">
+                  <span class="cert-mark">◉</span>
+                  <img src="images/certs/Associate Data Scientist.jpe" alt="Associate Data Scientist certificate" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+                </div>
+                <div class="cert-info">
+                  <div>
+                    <strong>Associate Data Scientist (Digital Talent Academy)</strong>
+                    <small>Digital Talent Scholarship · ID: 21211993840-3339</small>
+                    <span class="cert-issued">Issued Feb 2026</span>
+                  </div>
+                  <a class="cert-link" href="https://digitalent.kominfo.go.id/cek-sertifikat" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+                    <span class="sr-only" data-en="Open certificate" data-id="Buka sertifikat">Open certificate</span>
+                  </a>
+                </div>
+              </article>
+              <article class="cert-item" data-cat="Others">
+                <div class="cert-thumb">
+                  <span class="cert-mark">⌘</span>
+                  <img src="images/certs/AI Productivity.jpe" alt="AI Productivity certificate" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+                </div>
+                <div class="cert-info">
+                  <div>
+                    <strong>AI Productivity and AI API Integration for Developers</strong>
+                    <small>Hacktiv8 Indonesia · ID: 01055/H8/CSR/MBA2/III/2026</small>
+                    <span class="cert-issued">Issued Mar 2026</span>
+                  </div>
+                  <a class="cert-link" href="#" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+                    <span class="sr-only" data-en="Open certificate" data-id="Buka sertifikat">Open certificate</span>
+                  </a>
+                </div>
+              </article>
+              <article class="cert-item" data-cat="Dicoding">
+                <div class="cert-thumb">
+                  <span class="cert-mark">◎</span>
+                  <img src="images/certs/Belajar Dasar AI.jpg" alt="Belajar Dasar AI certificate" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+                </div>
+                <div class="cert-info">
+                  <div>
+                    <strong>Belajar Dasar AI</strong>
+                    <small>Dicoding Indonesia · ID: 53XED18G9PRN</small>
+                    <span class="cert-issued">Issued Mar 2025</span>
+                  </div>
+                  <a class="cert-link" href="https://www.dicoding.com/certificates/53XED18G9PRN" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+                    <span class="sr-only" data-en="Open certificate" data-id="Buka sertifikat">Open certificate</span>
+                  </a>
+                </div>
+              </article>
+              <article class="cert-item" data-cat="Dicoding">
+                <div class="cert-thumb">
+                  <span class="cert-mark">◎</span>
+                  <img src="images/certs/Belajar Dasar Visualisasi Data.jpg" alt="Belajar Dasar Visualisasi Data certificate" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+                </div>
+                <div class="cert-info">
+                  <div>
+                    <strong>Belajar Dasar Visualisasi Data</strong>
+                    <small>Dicoding Indonesia · ID: 4EXG7LMODPRL</small>
+                    <span class="cert-issued">Issued Dec 2024 </span>
+                  </div>
+                  <a class="cert-link" href="https://www.dicoding.com/certificates/4EXG7LMODPRL" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+                    <span class="sr-only" data-en="Open certificate" data-id="Buka sertifikat">Open certificate</span>
+                  </a>
+                </div>
+              </article>
+              <article class="cert-item" data-cat="LinkedIn">
+                <div class="cert-thumb">
+                  <span class="cert-mark">◉</span>
+                  <img src="images/certs/Learning Microsoft 365 Copilot.jpe" alt="Learning Microsoft 365 Copilot certificate" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+                </div>
+                <div class="cert-info">
+                  <div>
+                    <strong>Learning Microsoft 365 Copilot and Business Chat</strong>
+                    <small>LinkedIn</small>
+                    <span class="cert-issued">Issued Dec 2024</span>
+                  </div>
+                  <a class="cert-link" href="https://www.linkedin.com/learning/certificates/7c2e00777707607ae77d8e4eae81b01f8a2fb092315ef4a3369b02d5a0803abb" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+                    <span class="sr-only" data-en="Open certificate" data-id="Buka sertifikat">Open certificate</span>
+                  </a>
+                </div>
+              </article>
+              <article class="cert-item" data-cat="LinkedIn">
+                <div class="cert-thumb">
+                  <span class="cert-mark">◉</span>
+                  <img src="images/certs/Prompt Engineering.jpe" alt="Prompt Engineering certificate" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+                </div>
+                <div class="cert-info">
+                  <div>
+                    <strong>Introduction to Prompt Engineering for Generative AI</strong>
+                    <small>LinkedIn</small>
+                    <span class="cert-issued">Issued Dec 2024</span>
+                  </div>
+                  <a class="cert-link" href="https://www.linkedin.com/learning/certificates/b74f48bb5c69eb8f70e9579c916b73d539884498d2b9685711841e0a64163008" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+                    <span class="sr-only" data-en="Open certificate" data-id="Buka sertifikat">Open certificate</span>
+                  </a>
+                </div>
+              </article>
+              <article class="cert-item" data-cat="Dicoding">
+                <div class="cert-thumb">
+                  <span class="cert-mark">◉</span>
+                  <img src="images/certs/Memulai Pemrograman dengan Python.jpg" alt="Memulai Pemrograman dengan Python certificate" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+                </div>
+                <div class="cert-info">
+                  <div>
+                    <strong>Memulai Pemrograman dengan Python</strong>
+                    <small>Dicoding Indonesia · ID: 81P2403DOZOY</small>
+                    <span class="cert-issued">Issued Dec 2024</span>
+                  </div>
+                  <a class="cert-link" href="https://www.dicoding.com/certificates/81P2403DOZOY" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+                    <span class="sr-only" data-en="Open certificate" data-id="Buka sertifikat">Open certificate</span>
+                  </a>
+                </div>
+              </article>
+              <article class="cert-item" data-cat="Others">
+                <div class="cert-thumb">
+                  <span class="cert-mark">◉</span>
+                  <img src="images/certs/Generative AI by Microsoft.jpg" alt="Generative AI by Microsoft certificate" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+                </div>
+                <div class="cert-info">
+                  <div>
+                    <strong>Generative AI for Youth</strong>
+                    <small>Microsoft</small>
+                    <span class="cert-issued">Issued Dec 2024</span>
+                  </div>
+                  <a class="cert-link" href="https://drive.google.com/file/d/1o95O-M3XBx8p-EGKDyUJapIEPkC2Jzo7/view?usp=sharing" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+                    <span class="sr-only" data-en="Open certificate" data-id="Buka sertifikat">Open certificate</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<section id="skills">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div
+                class="eyebrow"
+                data-en="Tools & strengths"
+                data-id="Tools & kemampuan"
+              >
+                Tools & strengths
+              </div>
+              <h2 data-en="Skills" data-id="Keahlian">Skills</h2>
+            </div>
+          </div>
+          <div class="skills-layout">
+            <article class="panel skill-group reveal">
+              <div class="skill-head">
+                <span class="skill-ico" aria-hidden="true">💻</span>
+                <h3 data-en="Programming languages" data-id="Bahasa pemrograman">Programming languages</h3>
+              </div>
+              <div class="chips">
+                <span class="chip">Python<span class="dots" style="--lvl: 3" role="img" aria-label="Level 3 of 5"></span></span>
+                <span class="chip">SQL<span class="dots" style="--lvl: 3" role="img" aria-label="Level 3 of 5"></span></span>
+                <span class="chip">R<span class="dots" style="--lvl: 2" role="img" aria-label="Level 2 of 5"></span></span>
+                <span class="chip">HTML &amp; CSS<span class="dots" style="--lvl: 3" role="img" aria-label="Level 3 of 5"></span></span>
+              </div>
+            </article>
+            <article class="panel skill-group reveal">
+              <div class="skill-head">
+                <span class="skill-ico" aria-hidden="true">🛠️</span>
+                <h3 data-en="Tools &amp; platforms" data-id="Tools &amp; platform">Tools &amp; platforms</h3>
+              </div>
+              <div class="chips">
+                <span class="chip">Microsoft Excel<span class="dots" style="--lvl: 3" role="img" aria-label="Level 3 of 5"></span></span>
+                <span class="chip">Tableau<span class="dots" style="--lvl: 3" role="img" aria-label="Level 3 of 5"></span></span>
+                <span class="chip">Git&GitHub<span class="dots" style="--lvl: 3" role="img" aria-label="Level 3 of 5"></span></span>
+                <span class="chip">Figma<span class="dots" style="--lvl: 3" role="img" aria-label="Level 3 of 5"></span></span>
+                <span class="chip">Canva<span class="dots" style="--lvl: 3" role="img" aria-label="Level 3 of 5"></span></span>
+                <span class="chip">Capcut<span class="dots" style="--lvl: 3" role="img" aria-label="Level 3 of 5"></span></span>
+                <span class="chip">Odoo<span class="dots" style="--lvl: 2" role="img" aria-label="Level 2 of 5"></span></span>
+                <span class="chip">Google Colab<span class="dots" style="--lvl: 3" role="img" aria-label="Level 3 of 5"></span></span>
+                <span class="chip">Google Workspace<span class="dots" style="--lvl: 4" role="img" aria-label="Level 4 of 5"></span></span>
+              </div>
+            </article>
+            <article class="panel skill-group reveal">
+              <div class="skill-head">
+                <span class="skill-ico" aria-hidden="true">🧠</span>
+                <h3 data-en="Hard skills" data-id="Hard skills">Hard skills</h3>
+              </div>
+              <div class="chips">
+                <span class="chip plain" data-en="Data Processing" data-id="Pengolahan Data">Data Processing</span>
+                <span class="chip plain" data-en="Machine Learning" data-id="Pembelajaran Mesin">Machine Learning</span>
+                <span class="chip plain" data-en="Deep Learning" data-id="Deep Learning">IT Governance</span>
+                <span class="chip plain" data-en="Reporting &amp; Documentation" data-id="Pelaporan &amp; Dokumentasi">Reporting &amp; Documentation</span>
+                <span class="chip plain" data-en="Business Process Analysis" data-id="Analisis Proses Bisnis">Business Process Analysis</span>
+                <span class="chip plain" data-en="IT Governance" data-id="Tata Kelola TI">IT Governance</span>
+                <span class="chip plain" data-en="Data Visualization" data-id="Visualisasi Data">Data Visualization</span>
+              </div>
+            </article>
+            <article class="panel skill-group reveal">
+              <div class="skill-head">
+                <span class="skill-ico" aria-hidden="true">🤝</span>
+                <h3 data-en="Soft skills" data-id="Soft skills">Soft skills</h3>
+              </div>
+              <div class="chips">
+                <span class="chip plain" data-en="Communication" data-id="Komunikasi">Communication</span>
+                <span class="chip plain" data-en="Team Collaboration" data-id="Kolaborasi Tim">Team Collaboration</span>
+                <span class="chip plain" data-en="Attention to Detail" data-id="Ketelitian">Attention to Detail</span>
+                <span class="chip plain" data-en="Problem Solving" data-id="Pemecahan Masalah">Problem Solving</span>
+                <span class="chip plain" data-en="Adaptability" data-id="Kemampuan Beradaptasi">Adaptability</span>
+                <span class="chip plain" data-en="Time Management" data-id="Manajemen Waktu">Time Management</span>
+                <span class="chip plain" data-en="Critical Thinking" data-id="Berpikir Kritis">Critical Thinking</span>
+              </div>
+            </article>
+            <article class="panel skill-group reveal">
+              <div class="skill-head">
+                <span class="skill-ico" aria-hidden="true">🌐</span>
+                <h3 data-en="Languages" data-id="Bahasa">Languages</h3>
+              </div>
+              <div class="lang-list">
+                <!-- Ubah --lvl (0% sampai 100%) dan aria-valuenow untuk panjang garis; ubah teks level di sebelah kanan nama.
+                     Tambah bahasa: salin satu blok <div class="lang-row">...</div>. -->
+                <div class="lang-row">
+                  <div class="lang-top">
+                    <span class="lang-name" data-en="Indonesian" data-id="Bahasa Indonesia">Indonesian</span>
+                    <span class="lang-level" data-en="Native" data-id="Penutur asli">Native</span>
+                  </div>
+                  <div class="lang-bar" role="progressbar" aria-label="Indonesian" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><span style="--lvl: 100%"></span></div>
+                </div>
+                <div class="lang-row">
+                  <div class="lang-top">
+                    <span class="lang-name" data-en="English" data-id="Inggris">English</span>
+                    <span class="lang-level" data-en="Intermediate" data-id="Menengah">Intermediate</span>
+                  </div>
+                  <div class="lang-bar" role="progressbar" aria-label="English" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"><span style="--lvl: 60%"></span></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+<section id="committees" style="background: var(--sage-light)">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div
+                class="eyebrow"
+                data-en="Events & activities"
+                data-id="Kegiatan & acara"
+              >
+                Events & activities
+              </div>
+              <h2
+                data-en="Committee Experiences"
+                data-id="Pengalaman Kepanitiaan"
+              >
+                Committee Experiences
+              </h2>
+            </div>
+          </div>
+          <div class="committee-grid">
+            <!-- Tambah kepanitiaan: salin satu blok <article class="committee-card reveal">.
+                 Foto: taruh di images/committee/ lalu samakan nama file pada src. Tag (opsional): salin/hapus <span class="committee-tag">. -->
+            <article class="committee-card reveal">
+              <div class="committee-photo">
+                <span class="committee-icon" aria-hidden="true">▣</span>
+                <img src="images/committee/scifeast.jpeg" alt="Design Staff at SCIFEAST 2024" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+              </div>
+              <div class="committee-body">
+                <strong data-en="Design Staff" data-id="Staff Desain">Design Staff</strong>
+                <span class="committee-org">SCIFEAST 2024 · BEM FST Universitas Airlangga</span>
+                <span class="committee-period" data-en="Sep 2024 – Nov 2024 · 3 mos" data-id="Sep 2024 – Nov 2024 · 3 bln">Sep 2024 – Nov 2024 · 3 mos</span>
+              </div>
+            </article>
+            <article class="committee-card reveal">
+              <div class="committee-photo">
+                <span class="committee-icon" aria-hidden="true">▣</span>
+                <img src="images/committee/pkm-cup.jpe" alt="Publication Documentation and Decoration Coordinator at FST PKM CUP 2024" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+              </div>
+              <div class="committee-body">
+                <strong data-en="Publication Documentation and Decoration Coordinator" data-id="Koordinator Publikasi Dokumenatasi dan Dekorasi">Publication Documentation and Decoration Coordinator</strong>
+                <span class="committee-org">FST PKM CUP 2024 · BEM FST Universitas Airlangga</span>
+                <span class="committee-period" data-en="Apr 2024 – June 2024 · 3 mos" data-id="Apr 2024 – Juni 2024 · 3 bln">Apr 2024 – Jun 2024 · 3 mos</span>
+              </div>
+            </article>
+            <article class="committee-card reveal">
+              <div class="committee-photo">
+                <span class="committee-icon" aria-hidden="true">▣</span>
+                <img src="images/committee/Amerta.jpe" alt="Group Facilitator at AMERTA 2024" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+              </div>
+              <div class="committee-body">
+                <strong data-en="Group Facilitator" data-id="Pendamping Kelompok">Group Facilitator</strong>
+                <span class="committee-org">AMERTA 2024 · Universitas Airlangga</span>
+                <span class="committee-period" data-en="July 2024 – Augs 2024 · 2 mos" data-id="Juli 2024 – Ags 2024 · 2 bln">Apr 2024 – Jun 2024 · 2 mos</span>
+              </div>
+            </article>
+            <article class="committee-card reveal">
+              <div class="committee-photo">
+                <span class="committee-icon" aria-hidden="true">▣</span>
+                <img src="images/committee/fnb.jpeg" alt="Secretarial Staff at Festival Nasional Budaya (FNB) Universitas Airlangga 2024" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+              </div>
+              <div class="committee-body">
+                <strong data-en="Secretarial Staff" data-id="Staff Kesekretariatan">Secretarial Staff</strong>
+                <span class="committee-org">Festival Nasional Budaya (FNB) Universitas Airlangga 2024 · BEM Universitas Airlangga</span>
+                <span class="committee-period" data-en="Nov 2023 – Feb 2024 · 3 mos" data-id="Nov 2023 – Feb 2024 · 3 bln">Nov 2024 – Feb 2024 · 3 mos</span>
+              </div>
+            </article>
+            <article class="committee-card reveal">
+              <div class="committee-photo">
+                <span class="committee-icon" aria-hidden="true">▣</span>
+                <img src="images/committee/usn.jpeg" alt="Secretarial Coordinator at UNAIR Sapa Negeri (USN) 2023" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+              </div>
+              <div class="committee-body">
+                <strong data-en="Secretarial Coordinator" data-id="Koordinator Kesekretariatan">Secretarial Coordinator</strong>
+                <span class="committee-org">UNAIR Sapa Negeri (USN) 2023 · FORSIDA (Forum Silaturahmi Mahasiswa Daerah) Universitas Airlangga</span>
+                <span class="committee-period" data-en="Dec 2023 – Jan 2024 · 2 mos" data-id="Des 2023 – Jan 2024 · 2 bln">Dec 2023 – Jan 2024 · 2 mos</span>
+              </div>
+            </article>
+            <article class="committee-card reveal">
+              <div class="committee-photo">
+                <span class="committee-icon" aria-hidden="true">▣</span>
+                <img src="images/committee/mata-fst.jpg" alt="Editorial Staff at Majalah Tahunan (MATA) FST 2023" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+              </div>
+              <div class="committee-body">
+                <strong data-en="Editorial Staff" data-id="Staff Editorial">Editorial Staff </strong>
+                <span class="committee-org">Majalah Tahunan (MATA) FST 2023 · LPM FORMAT FST Universitas Airlangga</span>
+                <span class="committee-period" data-en="Augst 2023 – Oct 2023 · 3 mos" data-id="Ags 2023 – Okt 2023 · 3 bln">Augst 2023 – Oct 2023 · 3 mos</span>
+              </div>
+            </article>
+            <article class="committee-card reveal">
+              <div class="committee-photo">
+                <span class="committee-icon" aria-hidden="true">▣</span>
+                <img src="images/committee/isac23.jpg" alt="Secretarial Staff at Information Systems Airlangga Competition (ISAC) 2023" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+              </div>
+              <div class="committee-body">
+                <strong data-en="Secretarial Staff" data-id="Staff Kesekretariatan">Secretarial Staff</strong>
+                <span class="committee-org">Information Systems Airlangga Competition (ISAC) 2023 · Himpunan Mahasiswa S1 Sistem Informasi Universitas Airlangga</span>
+                <span class="committee-period" data-en="Augst 2023 – Nov 2023 · 4 mos" data-id="Ags 2023 – Nov 2023 · 4 bln">Augst 2023 – Nov 2023 · 4 mos</span>
+              </div>
+            </article>
+            <article class="committee-card reveal">
+              <div class="committee-photo">
+                <span class="committee-icon" aria-hidden="true">▣</span>
+                <img src="images/committee/scriptor.jpg" alt="Fundraising and Business Staff at SCRIPTOR 2023" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+              </div>
+              <div class="committee-body">
+                <strong data-en="Fundraising and Business Staff" data-id="Staff Dana dan Usaha">Fundraising and Business Staff</strong>
+                <span class="committee-org">SCRIPTOR 2023 · LPM FORMAT FST Universitas Airlangga</span>
+                <span class="committee-period" data-en="Augst 2023 – Oct 2023 · 3 mos" data-id="Ags 2023 – Okt 2023 · 3 bln">Augst 2023 – Oct 2023 · 3 mos</span>
+              </div>
+            </article>
+            <article class="committee-card reveal">
+              <div class="committee-photo">
+                <span class="committee-icon" aria-hidden="true">▣</span>
+                <img src="images/committee/isef.jpg" alt="Secretarial Coordinator at Islamic Education and Technology Fair (ISEF) 2023" class="zoomable-image" loading="lazy" onerror="this.remove()" />
+              </div>
+              <div class="committee-body">
+                <strong data-en="Secretarial Coordinator" data-id="Koordinator Kesekretariatan">Secretarial Coordinator</strong>
+                <span class="committee-org">Islamic Education and Technology Fair (ISEF) 2023 · JIMM - FST UNAIR</span>
+                <span class="committee-period" data-en="June 2023 – Nov 2023 · 4 mos" data-id="Juni 2023 – Nov 2023 · 4 bln">June 2023 – Nov 2023 · 4 mos</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+<div class="image-lightbox" id="imageLightbox" aria-label="Image preview" role="button" tabindex="0">
+        <img id="imageLightboxContent" src="" alt="Expanded experience documentation" />
+      </div>
+
+<section id="contact">
+        <div class="container">
+          <div class="contact-box reveal">
+            <div>
+              <div
+                class="eyebrow"
+                style="color: #d8e5d8"
+                data-en="Let's connect"
+                data-id="Mari terhubung"
+              >
+                Let's connect
+              </div>
+              <h2
+                data-en="Have an opportunity in mind?"
+                data-id="Ada peluang untuk berkolaborasi?"
+              >
+                Have an opportunity in mind?
+              </h2>
+              <p
+              data-en="Open to new opportunities and collaborations. Feel free to reach out anytime!"
+              data-id="Terbuka untuk peluang dan kolaborasi baru. Jangan ragu untuk menghubungi saya kapan saja!"
+              >
+              Open to new opportunities and collaborations. Feel free to reach out anytime!
+            </p>
+            </div>
+            <div class="contact-icons">
+              <a class="contact-icon" href="mailto:dianpratiwi14044@gmail.com" aria-label="Email" id="emailLink">
+                <span class="contact-icon-tile">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                </span>
+                <span class="contact-icon-label">Email</span>
+              </a>
+              <a class="contact-icon" href="https://www.linkedin.com/in/ddpratiwiii/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <span class="contact-icon-tile">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+                </span>
+                <span class="contact-icon-label">LinkedIn</span>
+              </a>
+              <a class="contact-icon" href="https://github.com/dianpratiwi14" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <span class="contact-icon-tile">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.05c-3.1.67-3.75-1.32-3.75-1.32-.5-1.29-1.23-1.63-1.23-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.47-.28-5.07-1.24-5.07-5.5 0-1.21.43-2.2 1.15-2.98-.12-.28-.5-1.41.11-2.94 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.66.11 2.94.72.78 1.15 1.77 1.15 2.98 0 4.27-2.6 5.22-5.08 5.49.4.35.75 1.02.75 2.06V22c0 .29.2.63.76.53A11.1 11.1 0 0 0 12 .9z"/></svg>
+                </span>
+                <span class="contact-icon-label">GitHub</span>
+              </a>
+              <a class="contact-icon" href="https://www.instagram.com/ddpratiwiii/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <span class="contact-icon-tile">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                </span>
+                <span class="contact-icon-label">Instagram</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container footer-inner">
+        <span>
+          <span data-en="Designed &amp; Built with 💖 by" data-id="Didesain &amp; Dibangun dengan 💖 oleh">Designed &amp; Built with 💖 by</span>
+          Dian Pratiwi · <span id="year"></span>
+        </span>
+      </div>
+    </footer>
+
+    <script>
+      let currentLang = "en";
+      const langToggle = document.getElementById("langToggle");
+      function setLanguage(lang) {
+        currentLang = lang;
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-en][data-id]").forEach((el) => {
+          el.textContent = el.dataset[lang];
+        });
+        document
+          .querySelectorAll("[data-en-html][data-id-html]")
+          .forEach((el) => {
+            el.innerHTML = el.dataset[lang + "Html"];
+          });
+        langToggle.textContent = lang === "en" ? "ID / EN" : "EN / ID";
+      }
+      langToggle.addEventListener("click", () =>
+        setLanguage(currentLang === "en" ? "id" : "en"),
+      );
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+      menuToggle.addEventListener("click", () =>
+        navLinks.classList.toggle("open"),
+      );
+      const navItems = [...navLinks.querySelectorAll("a")];
+      navItems.forEach((link) =>
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          navItems.forEach((item) =>
+            item.classList.toggle("active", item === link),
+          );
+        }),
+      );
+      // Keep the underline on the section currently visible while scrolling.
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              navItems.forEach((item) => {
+                item.classList.toggle(
+                  "active",
+                  item.getAttribute("href") === "#" + entry.target.id,
+                );
+              });
+            }
+          });
+        },
+        { rootMargin: "-28% 0px -58% 0px", threshold: 0 },
+      );
+      document
+        .querySelectorAll("main section[id]")
+        .forEach((section) => sectionObserver.observe(section));
+      // Enlarge internship and organization photos when clicked.
+      const imageLightbox = document.getElementById("imageLightbox");
+      const imageLightboxContent = document.getElementById("imageLightboxContent");
+      document.querySelectorAll(".zoomable-image").forEach((img) => {
+        img.addEventListener("click", () => {
+          imageLightboxContent.src = img.src;
+          imageLightboxContent.alt = img.alt;
+          imageLightbox.classList.add("open");
+          document.body.style.overflow = "hidden";
+        });
+      });
+      function closeImageLightbox() {
+        imageLightbox.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      imageLightbox.addEventListener("click", closeImageLightbox);
+      imageLightbox.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") closeImageLightbox();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeImageLightbox();
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+
+      // Certifications slider: arrow buttons, hidden when everything already fits.
+      (function () {
+        const track = document.getElementById("certTrack");
+        const nav = document.getElementById("certNav");
+        const prev = document.getElementById("certPrev");
+        const next = document.getElementById("certNext");
+        if (!track || !prev || !next) return;
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const step = () => {
+          const card = track.querySelector(".cert-item");
+          return card ? card.offsetWidth + 16 : 256;
+        };
+        function update() {
+          const overflow = track.scrollWidth > track.clientWidth + 2;
+          nav.hidden = !overflow || track.classList.contains("is-grid");
+          prev.disabled = track.scrollLeft <= 2;
+          next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+        }
+        function go(dir) {
+          const visible = Math.max(1, Math.floor(track.clientWidth / step()));
+          track.scrollBy({ left: dir * visible * step(), behavior: reduceMotion ? "auto" : "smooth" });
+        }
+        prev.addEventListener("click", () => go(-1));
+        next.addEventListener("click", () => go(1));
+        track.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+        update();
+      })();
+
+      // Certifications filter: tab All / Dicoding / LinkedIn / Others
+      (function () {
+        const tabs = document.querySelectorAll("#certTabs .cert-tab");
+        const track = document.getElementById("certTrack");
+        if (!tabs.length || !track) return;
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            const f = tab.dataset.filter;
+            tabs.forEach((t) => t.setAttribute("aria-pressed", String(t === tab)));
+            track.querySelectorAll(".cert-item").forEach((card) => {
+              card.hidden = !(f === "all" || card.dataset.cat === f);
+            });
+            track.scrollLeft = 0;
+            track.dispatchEvent(new Event("scroll")); // perbarui tombol ← →
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
