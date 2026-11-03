@@ -2,7 +2,7 @@
 
 A bilingual (English/Indonesian), responsive personal portfolio website built with plain HTML, CSS, and JavaScript.
 
-🔗 **Live site:** 
+🔗 **Live site:** https://dian-pratiwi-portofolio.vercel.app
 
 ## About
 
