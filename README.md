@@ -1,18 +1,27 @@
 # Dian Pratiwi — Portfolio
 
-A bilingual (English/Indonesian), responsive personal portfolio built with plain HTML, CSS, and JavaScript.
+A bilingual (English/Indonesian), responsive personal portfolio website built with plain HTML, CSS, and JavaScript.
 
-## Run locally
-1. Extract the ZIP file.
-2. Open `index.html` in a browser.
+🔗 **Live site:** https://LINK_VERCEL_KAMU.vercel.app
 
-## Before publishing
-- Replace `YOUR_EMAIL@example.com` with your professional email address.
-- Add your LinkedIn and GitHub links.
-- Verify certification names, providers, and dates; placeholders are intentionally marked.
-- Add project links, screenshots, and a CV PDF if you want those buttons/links.
-- Confirm all project descriptions and dates are accurate.
-- Ask the original repository owner for permission before reusing any of their code/assets. This starter is a fresh implementation and does not include their images or source files.
+## About
 
-## Publish
-You can upload these files to a new GitHub repository and enable GitHub Pages, or deploy the folder with Vercel/Netlify.
+Personal portfolio of Dian Pratiwi, an Information Systems graduate from Universitas Airlangga with interests in IT Governance, Data Analytics, and Business Intelligence. The site showcases my experience, projects, certifications, skills, and committee involvement.
+
+## Features
+
+- Bilingual content with an EN/ID language toggle
+- Responsive layout for desktop, tablet, and mobile
+- Project cards with category, tech stack, and links to code or dashboards
+- Experience timeline with image gallery and lightbox preview
+- Interactive committee cards with detail pop-ups
+- Smooth scroll, scroll-reveal animations, and active navigation highlight
+
+## Built With
+
+- HTML5
+- CSS3 (custom properties, Grid, Flexbox)
+- Vanilla JavaScript
+- Google Fonts (Playfair Display, DM Sans)
+
+## Project Structure
